@@ -155,7 +155,7 @@ def min_value(board):
     if terminal(board):
         return utility(board), None
 
-    v = float('-inf')
+    v = float('inf')
     move = None
     for action in actions(board):
         print(action)
