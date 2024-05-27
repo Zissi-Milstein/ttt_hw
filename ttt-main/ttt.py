@@ -154,19 +154,24 @@ def min_value(board):
     # Your code goes here
     if terminal(board):
         return utility(board), None
-        
+    # set v as positive infinaty     
     v = float('inf')
     move = None
+    # go over all possible actions (all empty cells)
     for action in actions(board):
         print(action)
         # implement max_value
         aux, act = max_value(result(board, action))
+         # if the value returned by max_value is less than the current v
         if aux < v:
+            # then set that as the v 
             v = aux
+            # update the move
             move = action
+            # return if the value is -1, the optimal
             if v == -1:
                 return v, move
-
+    # return the value and move
     return v, move
 
     
